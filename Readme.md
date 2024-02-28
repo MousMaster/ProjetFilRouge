@@ -26,7 +26,7 @@ Le site web vitrine a été conçu par l’équipe de développeurs de l’entre
 
 Ci-dessous un aperçu du site vitrine attendu. 
 
-![](images/site_vitrine.jpeg)
+![](sources/app/images/site_vitrine.jpeg)
 
 **NB :** L’image** créée devra permettre de lancer un container permettant d’héberger ce site web et ayant les liens adéquats permettant d’accéder à nos applications internes 
 
@@ -37,7 +37,7 @@ Il s’agit en effet d’une application web python utilisant le module Flask. L
 
 1) Image de base : `python:3.6-alpine`
 2) Définir le répertoire `/opt` comme répertoire de travail 
-3) Installer le module Flask version 1.1.2 à l’aide de `pip install flask==1.1.2`
+3) Installer le module Flask à l’aide de `pip install`
 4) Exposer le port `8080` qui est celui utilisé par défaut par l'application
 5) Créer les variables d’environnement `ODOO_URL` et `PGADMIN_URL` afin de permettre la définition de ces url lors du lancement du container 
 6) Lancer l’application `app.py` dans le `ENTRYPOINT` grâce à la commande `python`  
@@ -56,7 +56,7 @@ Une fois le test terminé, supprimez ce container test et poussez votre image su
 
 Les applications ou services seront déployées dans un cluster Minikube, donc à un seul nœud et devront respecter l’architecture suivante. 
 
-![](images/synoptique_Kubernetes.jpeg)
+![](sources/app/images/synoptique_Kubernetes.jpeg)
 
 En vous basant sur cette architecture logicielle, bien vouloir identifier en donnant le type et le rôle de chacune des ressources (A…H)  mentionnées dans cette architecture. 
 
@@ -66,7 +66,7 @@ En vous basant sur cette architecture logicielle, bien vouloir identifier en don
 
 Comme décrite ci-dessus, Odoo est une application web de type 2 tier contenant différents modules facilitant la gestion administrative d’une société. 
 
-En Vous servant des différents liens mentionnés ci-dessus, déployer Odoo à l’aide des images docker correspondantes et assurez vous que les données de la base de données Odoo soit persistantes et sauvegardées dans un répertoire de votre choix sur votre hôte. **NB**: respectez l’architecture ci-dessus 
+En Vous servant des différents liens mentionnés ci-dessus, déployer Odoo à l’aide des images docker correspondantes et assurez vous que les données de la base de donnée Odoo soient persistantes et sauvegardées dans un répertoire de votre choix sur votre hôte. **NB**: respectez l’architecture ci-dessus 
 
 
 
@@ -82,7 +82,7 @@ Afin de réduire le nombre de taches manuelles, nous souhaiterons qu’au démar
 
 Ce fichier doit être situé au niveau du container dans le répertoire : /pgadmin4/servers.json 
 
-![](images/server_def.jpeg)
+![](sources/app/images/server_def.jpeg)
 
 
 ### **d. Déploiement des différentes applications** 
@@ -102,7 +102,7 @@ Lancez l’exécution de vos différents manifests afin de déployer les différ
 L'objectif de ICGROUP est en effet de mettre sur pied un pipeline CI/CD permettant l'intégration et le déploiement en continu de cette solution sur leurs différentes machines en environnement de production (03 serveurs hébergés soit en On Premises soit dans le cloud AWS)
 
 ### **a. Pipeline Stages** 
-![](images/pipeline.jpeg)
+![](sources/app/images/pipeline.jpeg)
 
 ### **b. Infrastructure** 
 
@@ -134,11 +134,11 @@ Les étapes sont les suivantes :
 Afin de davantage automatiser notre solution, vous devez créer à la racine de votre repo, un fichier appelé releases.txt dans lequel vous enterrez les données sur votre application ( ODOO_URL, PGADMIN_URL et Version)
 Ce fichier devra contenir 03 lignes et 02 colonnes ( séparateur de colonne étant l’espace)
 Exemple 
-![](images/releases.jpeg)
+![](sources/app/images/releases.jpeg)
 
 Par la suite, vous devez modifier votre Dockerfile afin qu’il puisse lors du build récupérer les valeurs des URL du fichier releases.txt et les fournir automatiquement aux variables d’environnement crées dans le Dockerfile.
 Cela devra se faire grâce aux commandes awk et export. Ci-dessous un exemple.
-![](images/export_var.jpeg)
+![](sources/app/images/export_var.jpeg)
 Après avoir crée le Dockerfile qui va bien, Vous devrez créer le JenkinsFile permettant de Builder l’application, la tester (à vous de trouver les différents tests à réaliser sur chacune des applications) et la déployer en environnement de production.
 **NB** : vous devrez utiliser les mêmes mécanismes afin de récupérer la valeur de la variable version dans le fichier releases.txt qui devra être utilisé comme tag sur votre image.
 
@@ -153,7 +153,7 @@ Lancez l’exécution de votre pipeline manuellement pour une première fois, en
 
 Ci-dessous un exemple de description des qualifications souhaitées pour un poste de Devops 
 
-![](images/offre_emploi.jpeg)
+![](sources/app/images/offre_emploi.jpeg)
 
 **NB** : Bien vouloir preter attention aux qualités encadrées en jaune ci-dessus, vous vous rendez compte en effet que maitriser les technologies seulement ne suffit pas, il faut en plus de ca avoir un esprit très créatif, de très bonnes capacités redactionnelles pour rediger vos différents rapports et également des qualités de pédagogue qui vous aideront à parfaire les explications de vos actions dans vos différents rapports afin de faciliter leur compréhension. 
 
