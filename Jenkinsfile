@@ -5,7 +5,7 @@ pipeline {
         IMAGE_NAME = "ic-webapp"
         APP_CONTAINER_PORT = "8080"
         DOCKERHUB_ID = "mous172782"
-        DOCKERHUB_PASSWORD = credentials('dockerhub_password')
+       // DOCKERHUB_PASSWORD = credentials('dockerhub_password')
         //DOCKERHUB_PASSWORD = "jdj"
         ANSIBLE_IMAGE_AGENT = "registry.gitlab.com/robconnolly/docker-ansible:latest"
         IC_WEBAPP_SERVER_DEV = "127.0.0.1"
@@ -72,17 +72,7 @@ pipeline {
           }
        }
 
-       stage ('Login and Push Image on docker hub') {
-          agent any
-          steps {
-             script {
-               sh '''
-                   echo $DOCKERHUB_PASSWORD | docker login -u $DOCKERHUB_ID --password-stdin
-                   docker push ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG
-               '''
-             }
-          }
-       }
+      
 
         stage ('Build EC2 on AWS with terraform') {
           agent { 
