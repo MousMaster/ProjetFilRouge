@@ -1,6 +1,5 @@
 /* import shared library. */
-@Library('ulrich-shared-library')_
-
+//jdjd
 pipeline {
     environment {
         IMAGE_NAME = "ic-webapp"
