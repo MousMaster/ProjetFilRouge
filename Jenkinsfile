@@ -154,7 +154,7 @@ pipeline {
                   
         stage('Deploy DEV  env for testing') {
             agent   {     
-                        docker { 
+                        dockerContainer { 
                             image 'registry.gitlab.com/robconnolly/docker-ansible:latest'
                         } 
                     }
@@ -240,7 +240,7 @@ pipeline {
         }
 
         stage ("Delete Dev environment") {
-            agent { docker { image 'jenkins/jnlp-agent-terraform'  } }
+            agent { dockerContainer { image 'jenkins/jnlp-agent-terraform'  } }
             environment {
                 AWS_ACCESS_KEY_ID = credentials('aws_access_key_id')
                 AWS_SECRET_ACCESS_KEY = credentials('aws_secret_access_key')
@@ -262,7 +262,7 @@ pipeline {
         }  
         stage ("Deploy in PRODUCTION") {
             /* when { expression { GIT_BRANCH == 'origin/prod'} } */
-            agent { docker { image 'registry.gitlab.com/robconnolly/docker-ansible:latest'  } }                     
+            agent { dockerContainer { image 'registry.gitlab.com/robconnolly/docker-ansible:latest'  } }                     
             stages {
                 stage ("PRODUCTION - Ping target hosts") {
                     steps {
