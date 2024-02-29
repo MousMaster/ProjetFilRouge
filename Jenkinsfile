@@ -14,12 +14,12 @@ pipeline {
     stages {
     
         stage('Build image') {
-            steps {
-                script {
-                    sh "docker build --no-cache -f ./sources/app/${DOCKERFILE_NAME} -t ${DOCKERHUB_ID}/${IMAGE_NAME}:${IMAGE_TAG} ./sources/app"
-                }
-            }
-        }
+           agent any
+           steps {
+              script {
+                sh 'docker build -t ${DOCKERHUB_ID}/$IMAGE_NAME:$IMAGE_TAG ./sources/app'
+              }
+           }
     
        stage('Scan Image with  SNYK') {
             agent any
