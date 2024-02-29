@@ -5,7 +5,8 @@ pipeline {
         IMAGE_NAME = "ic-webapp"
         APP_CONTAINER_PORT = "8080"
         DOCKERHUB_ID = "choco1992"
-        DOCKERHUB_PASSWORD = credentials('dockerhub_password')
+        //DOCKERHUB_PASSWORD = credentials('dockerhub_password')
+        DOCKERHUB_PASSWORD="jdj"
         ANSIBLE_IMAGE_AGENT = "registry.gitlab.com/robconnolly/docker-ansible:latest"
         IC_WEBAPP_SERVER_DEV = "127.0.0.1"
     }
