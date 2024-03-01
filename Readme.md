@@ -27,11 +27,11 @@ D'autre part, le service ClusterIP a été choisi pour des composants internes s
 
 voici la représentation où chaque lettre correspond à :
 
-A, C et G sont des nodePort
+A, C et G ,  sont des nodePort
 
 E est un clusterIp.
 
-B, D, H et F sont des deployments.
+B, D, H et F representent respectivement ic-webapp, odoo, pgAdmin et la base de donnee de odoo. sont des deployments.
 
 
 ### 3 Partie 3 
