@@ -10,6 +10,8 @@ La société **IC GROUP** dans laquelle vous travaillez en tant qu’ingénieur 
 ### 1 Partie 1 :  
 1) Dockeristaion du site vitrine 
 
+![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ic-webapp.png)
+
 ### 2 Partie 2 :  
 2) Déploiement des différentes applications dans un cluster Kubernetes
 
