@@ -22,17 +22,17 @@ Un apperçu de l'application est visble ci dessous.
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/kubernetes.png)
 
 Dans cette architecture Kubernetes, les choix des services ont été faits en tenant compte des exigences de sécurité et des bonnes pratiques. Les services NodePort ont été utilisés pour les applications nécessitant un accès externe, tout en garantissant une certaine sécurité grâce à la délimitation des ports exposés. Par exemple, les services NodePort sont appropriés pour des applications telles que les API ou les applications Web qui doivent être accessibles depuis l'extérieur du cluster.
+Ainsi ils ont ete utilise pour B, D, et H
 
-D'autre part, le service ClusterIP a été choisi pour des composants internes sensibles comme la base de données, afin de limiter leur accessibilité uniquement à l'intérieur du cluster Kubernetes. Cela renforce la sécurité en empêchant tout accès externe non autorisé à ces services, tout en permettant aux autres composants de l'application d'interagir avec eux de manière sécurisée à l'intérieur du cluster.
+D'autre part, le service ClusterIP a été choisi pour le composant interne sensibles  la base de données F , afin de limiter son accessibilité uniquement à l'intérieur du cluster Kubernetes. Cela renforce la sécurité en empêchant tout accès externe non autorisé à ce service, tout en permettant aux autres composants de l'application d'interagir avec elle de manière sécurisée à l'intérieur du cluster.
 
-voici la représentation où chaque lettre correspond à :
+voici la représentation de chaque lettre :
 
 A, C et G ,  sont des nodePort
-
 E est un clusterIp.
+B, D, H et F representent respectivement ic-webapp, odoo, pgAdmin et la base de donnee de odoo. Il  sont de type deployments.
 
-B, D, H et F representent respectivement ic-webapp, odoo, pgAdmin et la base de donnee de odoo. sont des deployments.
-
+L'enssemble du manifest kubernetes se trouve dans le repertoire 'manifestes-k8s'.
 
 ### 3 Partie 3 
 3) Pipeline CI/CD 
