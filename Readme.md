@@ -19,6 +19,20 @@ Un apperçu de l'application est visble ci dessous.
 ### 2 Partie 2 :  
 2) Déploiement des différentes applications dans un cluster Kubernetes
 
+![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/kubernetes.png)
+
+Dans cette architecture Kubernetes, les choix des services ont été faits en tenant compte des exigences de sécurité et des bonnes pratiques. Les services NodePort ont été utilisés pour les applications nécessitant un accès externe, tout en garantissant une certaine sécurité grâce à la délimitation des ports exposés. Par exemple, les services NodePort sont appropriés pour des applications telles que les API ou les applications Web qui doivent être accessibles depuis l'extérieur du cluster.
+
+D'autre part, le service ClusterIP a été choisi pour des composants internes sensibles comme la base de données, afin de limiter leur accessibilité uniquement à l'intérieur du cluster Kubernetes. Cela renforce la sécurité en empêchant tout accès externe non autorisé à ces services, tout en permettant aux autres composants de l'application d'interagir avec eux de manière sécurisée à l'intérieur du cluster.
+
+voici la représentation où chaque lettre correspond à :
+
+A, C et G sont des nodePort
+
+E est un clusterIp.
+
+B, D, H et F sont des deployments.
+
 
 ### 3 Partie 3 
 3) Pipeline CI/CD 
