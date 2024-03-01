@@ -18,8 +18,9 @@ La société **IC GROUP** dans laquelle vous travaillez en tant qu’ingénieur 
 3) Pipeline CI/CD 
 
 
-Jenkins 
+#### Partie CI Jenkins 
 
+#### Partie CD Ansible 
 
-Ansible 
+ 
 
