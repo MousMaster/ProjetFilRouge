@@ -16,6 +16,7 @@ La société **IC GROUP** dans laquelle vous travaillez en tant qu’ingénieur 
 
 ### 3 Partie 3 
 3) Pipeline CI/CD 
+![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ansible.png)
 
 
 #### Partie CI Jenkins 
