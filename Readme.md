@@ -20,8 +20,8 @@ La société **IC GROUP** dans laquelle vous travaillez en tant qu’ingénieur 
 
 
 #### Partie CI Jenkins 
-![project](<img src="https://github.com/MousMaster/ProjetFilRouge/blob/main/images/Jenkins.png" width="300">
-)
+<img src="https://github.com/MousMaster/ProjetFilRouge/blob/main/images/Jenkins.png" width="300">
+
 
 #### Partie CD Ansible 
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ansible.png)
