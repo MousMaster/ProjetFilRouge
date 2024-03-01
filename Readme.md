@@ -10,6 +10,10 @@ La société **IC GROUP** dans laquelle vous travaillez en tant qu’ingénieur 
 ### 1 Partie 1 :  
 1) Dockeristaion du site vitrine 
 
+
+L'application a été dockerisée en créant un fichier Dockerfile décrivant les dépendances et les étapes d'installation. Ensuite, Docker a été utilisé pour construire une image à partir de ce Dockerfile avec la commande docker build. Enfin, l'application a été exécutée dans un conteneur Docker isolé en utilisant la commande docker run.
+Un apperçu de l'application est visble ci dessous.
+
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ic-webapp.png)
 
 ### 2 Partie 2 :  
