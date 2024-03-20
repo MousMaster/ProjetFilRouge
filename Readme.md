@@ -108,3 +108,25 @@ Ce pipeline CI/CD automatisé garantit un déploiement fluide et sécurisé de l
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ansible.png)
  
 
+# Guide de déploiement avec Ansible
+
+Ce référentiel contient des configurations Ansible conçues pour le déploiement automatisé d'applications. Utilisant une approche modulaire, il est structuré en environnements, rôles, et playbooks, offrant ainsi une méthode de déploiement cohérente et réutilisable pour différents environnements tels que le développement, le test et la production.
+
+## Configuration
+
+Les fichiers de configuration principaux (`ansible.cfg`, `hosts.yml`) et les variables (`group_vars/`, `host_vars/`) définissent les paramètres globaux et spécifiques pour le déploiement.
+
+## Rôles
+
+Les rôles organisent les tâches, les variables, les valeurs par défaut et les templates pour déployer des composants spécifiques de manière autonome.
+
+## Playbooks
+
+Les playbooks (`playbooks/`) sont les scripts qui orchestrent le déploiement, faisant appel aux rôles et aux variables pour déployer les applications sur les hôtes ciblés.
+
+## Usage
+
+Pour déployer, exécutez :
+
+```bash
+ansible-playbook -i hosts.yml playbooks/<nom_du_playbook>.yml
