@@ -108,7 +108,6 @@ Ce pipeline CI/CD automatisé garantit un déploiement fluide et sécurisé de l
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ansible.png)
  
 
-# Guide de déploiement avec Ansible
 
 Ce référentiel contient des configurations Ansible conçues pour le déploiement automatisé d'applications. Utilisant une approche modulaire, il est structuré en environnements, rôles, et playbooks, offrant ainsi une méthode de déploiement cohérente et réutilisable pour différents environnements tels que le développement, le test et la production.
 
