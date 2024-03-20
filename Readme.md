@@ -109,23 +109,50 @@ Ce pipeline CI/CD automatisé garantit un déploiement fluide et sécurisé de l
  
 
 
-Ce référentiel contient des configurations Ansible conçues pour le déploiement automatisé d'applications. Utilisant une approche modulaire, il est structuré en environnements, rôles, et playbooks, offrant ainsi une méthode de déploiement cohérente et réutilisable pour différents environnements tels que le développement, le test et la production.
+# Guide de déploiement avec Ansible
 
-## Configuration
+Ce référentiel Ansible est une suite d'outils de déploiement pour la mise en place automatisée d'applications. Il offre une structure organisée, segmentée par rôles et playbooks, pour une application transparente des configurations à divers environnements.
 
-Les fichiers de configuration principaux (`ansible.cfg`, `hosts.yml`) et les variables (`group_vars/`, `host_vars/`) définissent les paramètres globaux et spécifiques pour le déploiement.
+## Structure du Référentiel
+
+### Configuration Globale
+
+- `ansible.cfg`: Les réglages par défaut pour Ansible, incluant les paramètres de performances et de connexion.
+- `hosts.yml`: L'inventaire détaillé des hôtes, regroupés par environnement ou fonction.
+
+### Variables d'Environnement
+
+Les variables d'environnement contrôlent les paramètres spécifiques à chaque déploiement et sont réparties en :
+
+- `group_vars/`: Variables applicables à des groupes d'hôtes, avec des fichiers distincts pour les environnements de production (`prod.yml`), de développement (`dev.yml`), et globaux (`all.yml`).
+- `host_vars/`: Configuration individuelle des hôtes, comme les adresses IP et les configurations spécifiques au serveur.
 
 ## Rôles
 
-Les rôles organisent les tâches, les variables, les valeurs par défaut et les templates pour déployer des composants spécifiques de manière autonome.
+Les rôles Ansible définissent des configurations réutilisables et des blocs de tâches pour les composants suivants :
+
+- **Install Docker (`roles/install-docker/`)**: Installe Docker sur les hôtes cibles.
+- **Odoo Server (`roles/odoo_role/`)**: Configure et déploie un serveur Odoo, y compris la création des conteneurs Docker via les templates.
+- **PgAdmin Server (`roles/pgadmin_role/`)**: Déploie PgAdmin, configuré pour se connecter aux instances de PostgreSQL.
+
+Chaque rôle inclut :
+- `tasks/main.yml`: La liste des tâches exécutées par le rôle.
+- `defaults/main.yml`: Les valeurs par défaut des variables pour le rôle.
+- `vars/main.yml`: Les variables de surcharge pour des configurations plus spécifiques.
+- `templates/`: Fichiers modèles Jinja2 utilisés pour générer des fichiers de configuration dynamiques.
 
 ## Playbooks
 
-Les playbooks (`playbooks/`) sont les scripts qui orchestrent le déploiement, faisant appel aux rôles et aux variables pour déployer les applications sur les hôtes ciblés.
+Les playbooks orchestrent le déploiement de l'infrastructure et des applications. Voici quelques exemples :
 
-## Usage
+- `deploy-ic-webapp.yml`: Automatise le déploiement de l'application web IC.
+- `deploy-odoo.yml`: Gère le déploiement d'Odoo, en utilisant les rôles et les variables pour une mise en place cohérente.
+- `deploy-pgadmin.yml`: Configure et déploie PgAdmin pour la gestion de bases de données PostgreSQL.
+- `install-docker.yml`: S'assure que Docker est installé et configuré sur les hôtes spécifiés.
 
-Pour déployer, exécutez :
+## Exécution des Playbooks
+
+Pour lancer un déploiement, exécutez la commande suivante :
 
 ```bash
 ansible-playbook -i hosts.yml playbooks/<nom_du_playbook>.yml
