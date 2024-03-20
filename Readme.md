@@ -45,6 +45,64 @@ L'enssemble du manifest kubernetes se trouve dans le repertoire 'manifestes-k8s'
     <img src="https://github.com/MousMaster/ProjetFilRouge/blob/main/images/Jenkins.png" width="300">
 </div>
 
+# Pipeline CI/CD pour l'application Web
+
+Ce pipeline Jenkins automatise le processus de développement logiciel, du build à la publication, en passant par les tests et le déploiement.
+
+## Environnement
+
+Les variables d'environnement sont définies pour faciliter le déploiement et la gestion du pipeline.
+
+- `IMAGE_NAME`: Nom de l'image Docker.
+- `APP_CONTAINER_PORT`: Port utilisé par le conteneur de l'application.
+- `DOCKERHUB_ID`: Identifiant Docker Hub.
+- `DOCKERHUB_PASSWORD`: Mot de passe Docker Hub.
+- `ANSIBLE_IMAGE_AGENT`: Image Ansible utilisée pour les déploiements.
+- `IC_WEBAPP_SERVER_DEV`: Adresse IP du serveur pour l'environnement DEV.
+
+## Stages du pipeline
+
+1. **Build de l'image**:
+   - Construction de l'image Docker à partir du Dockerfile.
+
+2. **Analyse de l'image avec Snyk**:
+   - Analyse de l'image Docker pour détecter les vulnérabilités de sécurité.
+
+3. **Exécution du conteneur basé sur l'image construite**:
+   - Lancement d'un conteneur Docker pour effectuer des tests.
+
+4. **Test de l'image**:
+   - Vérification de l'accessibilité de l'application via curl.
+
+5. **Nettoyage du conteneur**:
+   - Arrêt et suppression du conteneur Docker après les tests.
+
+6. **Connexion et publication de l'image sur Docker Hub**:
+   - Publication de l'image construite sur Docker Hub.
+
+7. **Construction d'une instance EC2 sur AWS avec Terraform**:
+   - Création d'une instance EC2 sur AWS à l'aide de Terraform.
+
+8. **Préparation de l'environnement Ansible**:
+   - Configuration des clés et des variables pour Ansible.
+
+9. **Déploiement de l'environnement DEV pour les tests**:
+   - Déploiement de l'application dans l'environnement DEV avec Ansible.
+
+10. **Suppression de l'environnement DEV**:
+    - Destruction de l'environnement DEV une fois les tests terminés.
+
+11. **Déploiement en PRODUCTION**:
+    - Déploiement de l'application dans l'environnement de production avec Ansible.
+
+## Notifications
+
+Le résultat du pipeline est notifié via Slack pour une communication efficace au sein de l'équipe de développement.
+
+---
+Ce pipeline CI/CD automatisé garantit un déploiement fluide et sécurisé de l'application web, de la construction à la publication, en passant par les tests et le déploiement dans différents environnements.
+
+
 
 #### Partie CD Ansible 
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ansible.png)
