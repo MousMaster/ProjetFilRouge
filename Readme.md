@@ -153,4 +153,4 @@ Les playbooks orchestrent le déploiement de l'infrastructure et des application
 
 
 #### Partie CD Ansible 
-![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/terraform.png)
+![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/terraform.jpeg)
