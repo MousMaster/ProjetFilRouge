@@ -150,3 +150,7 @@ Les playbooks orchestrent le déploiement de l'infrastructure et des application
 - `deploy-pgadmin.yml`: Configure et déploie PgAdmin pour la gestion de bases de données PostgreSQL.
 - `install-docker.yml`: S'assure que Docker est installé et configuré sur les hôtes spécifiés.
 
+
+
+#### Partie CD Ansible 
+![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/terraform.png)
