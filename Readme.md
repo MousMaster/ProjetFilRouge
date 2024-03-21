@@ -152,5 +152,37 @@ Les playbooks orchestrent le déploiement de l'infrastructure et des application
 
 
 
-#### Partie CD Ansible 
+#### Partie Terraform
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/terraform.jpeg)
+
+# Configuration Terraform pour l'infrastructure cloud
+
+Cette configuration Terraform définit l'infrastructure nécessaire pour déployer une application dans le cloud, en utilisant des modules réutilisables pour chaque composant principal.
+
+## Modules
+
+### EC2
+
+Définit les instances EC2 (serveurs virtuels) nécessaires pour l'application.
+
+- `ec2/main.tf` : Configure les instances EC2 avec la taille souhaitée, l'AMI, et d'autres paramètres.
+- `ec2/output.tf` : Fournit des informations sur les instances EC2 créées.
+- `ec2/variable.tf` : Permet de personnaliser l'instance EC2, comme le type d'instance et la clé SSH.
+
+### EIP
+
+Gère les adresses IP élastiques pour assurer une connectivité réseau stable.
+
+- `eip/main.tf` : Associe des adresses IP élastiques à des instances EC2 spécifiques.
+- `eip/output.tf` : Sort les détails des adresses IP élastiques attribuées.
+- `eip/variable.tf` : Définit des variables liées aux adresses IP élastiques.
+
+### SG (Security Group)
+
+Configure les groupes de sécurité pour contrôler l'accès réseau aux instances EC2.
+
+- `sg/main.tf` : Définit les règles de groupe de sécurité pour les ports entrants et sortants.
+- `sg/output.tf` : Donne les identifiants des groupes de sécurité créés.
+- `sg/variable.tf` : Contient les variables pour personnaliser les règles de groupe de sécurité.
+
+
