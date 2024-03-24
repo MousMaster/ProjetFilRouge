@@ -92,7 +92,7 @@ Les variables d'environnement sont définies pour faciliter le déploiement et l
 11. **Déploiement en PRODUCTION**:
     - Déploiement de l'application dans l'environnement de production avec Ansible.
 
-## Notifications
+#### Notifications
 
 Le résultat du pipeline est notifié via Slack pour une communication efficace au sein de l'équipe de développement.
 
@@ -101,30 +101,27 @@ Ce pipeline CI/CD automatisé garantit un déploiement fluide et sécurisé de l
 
 
 
-#### Partie 4 : CD Ansible 
+##### Partie 4 : CD Ansible 
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ansible.png)
  
 
-
-# Guide de déploiement avec Ansible
-
 Ce référentiel Ansible est une suite d'outils de déploiement pour la mise en place automatisée d'applications. Il offre une structure organisée, segmentée par rôles et playbooks, pour une application transparente des configurations à divers environnements.
 
-## Structure du Référentiel
+#### Structure du Référentiel
 
-### Configuration Globale
+#### Configuration Globale
 
 - `ansible.cfg`: Les réglages par défaut pour Ansible, incluant les paramètres de performances et de connexion.
 - `hosts.yml`: L'inventaire détaillé des hôtes, regroupés par environnement ou fonction.
 
-### Variables d'Environnement
+##### Variables d'Environnement
 
 Les variables d'environnement contrôlent les paramètres spécifiques à chaque déploiement et sont réparties en :
 
 - `group_vars/`: Variables applicables à des groupes d'hôtes, avec des fichiers distincts pour les environnements de production (`prod.yml`), de développement (`dev.yml`), et globaux (`all.yml`).
 - `host_vars/`: Configuration individuelle des hôtes, comme les adresses IP et les configurations spécifiques au serveur.
 
-## Rôles
+##### Rôles
 
 Les rôles Ansible définissent des configurations réutilisables et des blocs de tâches pour les composants suivants :
 
@@ -138,7 +135,7 @@ Chaque rôle inclut :
 - `vars/main.yml`: Les variables de surcharge pour des configurations plus spécifiques.
 - `templates/`: Fichiers modèles Jinja2 utilisés pour générer des fichiers de configuration dynamiques.
 
-## Playbooks
+#### Playbooks
 
 Les playbooks orchestrent le déploiement de l'infrastructure et des applications. Voici quelques exemples :
 
