@@ -7,8 +7,7 @@ La société **IC GROUP** dans laquelle vous travaillez en tant qu’ingénieur 
 ## 2 Modele propose : 
 
 
-### 1 Partie 1 :  
-1) Dockeristaion du site vitrine 
+### Partie 1 :  Dockeristaion du site vitrine 
 
 
 L'application a été dockerisée en créant un fichier Dockerfile décrivant les dépendances et les étapes d'installation. Ensuite, Docker a été utilisé pour construire une image à partir de ce Dockerfile avec la commande docker build. Enfin, l'application a été exécutée dans un conteneur Docker isolé en utilisant la commande docker run.
@@ -16,8 +15,7 @@ Un apperçu de l'application est visble ci dessous.
 
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ic-webapp.png)
 
-### 2 Partie 2 :  
-2) Déploiement des différentes applications dans un cluster Kubernetes
+### Partie 2 :  Déploiement des différentes applications dans un cluster Kubernetes
 
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/kubernetes.png)
 
@@ -34,8 +32,7 @@ B, D, H et F representent respectivement ic-webapp, odoo, pgAdmin et la base de 
 
 L'enssemble du manifest kubernetes se trouve dans le repertoire 'manifestes-k8s'.
 
-### 3 Partie 3 
-3) Pipeline CI/CD 
+### Partie 3 : Pipeline CI/CD 
 
 
 
@@ -104,7 +101,7 @@ Ce pipeline CI/CD automatisé garantit un déploiement fluide et sécurisé de l
 
 
 
-#### Partie CD Ansible 
+#### Partie 4 : CD Ansible 
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/ansible.png)
  
 
@@ -152,7 +149,7 @@ Les playbooks orchestrent le déploiement de l'infrastructure et des application
 
 
 
-#### Partie Terraform
+#### Partie 5 : Terraform
 ![project](https://github.com/MousMaster/ProjetFilRouge/blob/main/images/terraform.jpeg)
 
 # Configuration Terraform pour l'infrastructure cloud
