@@ -2,7 +2,8 @@
 
 ## 1 Ennonce : 
 Lien : 
-La société **IC GROUP** dans laquelle vous travaillez en tant qu’ingénieur Devops souhaite mettre sur pied un site web vitrine devant permettre d’accéder à ses 02 applications phares qui sont :  
+La société **IC GROUP** dans laquelle vous travaillez en tant qu’ingénieur Devops souhaite mettre sur pied un site web vitrine devant permettre d’accéder à ses 02 applications : [Ennoncé](https://github.com/sadofrazer/ic-webapp)
+  
 
 ## 2 Modele propose : 
 
